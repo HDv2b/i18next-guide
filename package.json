@@ -1,0 +1,32 @@
+{
+  "name": "next-i18next-examples",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "description": "Examples for use-cases of next-i18next.",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p ${PORT:=3000}",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "next",
+    "next.js",
+    "nextjs",
+    "i18n",
+    "next-i18next",
+    "i18next"
+  ],
+  "author": "Hussein Duvigneau <hussein@notmybase.com>",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^9.5.3",
+    "next-i18next": "^6.0.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-i18next": "^11.7.3"
+  },
+  "devDependencies": {
+    "prop-types": "^15.7.2"
+  }
+}
