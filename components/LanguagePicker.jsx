@@ -1,17 +1,12 @@
 import { i18n, withTranslation } from '../i18n';
 
-const LanguagePicker = ({ t }) => (
-  <section>
-    <p>
-      Current Locale:
-      <code>{i18n.language}</code>
-    </p>
-    <button
-      type="button"
-      onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'de' : 'en')}
-    >
-      {t('change-locale')}
-    </button>
+const LanguagePicker = () => (
+  <section className="language-picker">
+    Locale:&nbsp;
+    <select onChange={(e) => i18n.changeLanguage(e.target.value)} defaultValue={i18n.language}>
+      <option value="en">English (en)</option>
+      <option value="de">Deutsch (de)</option>
+    </select>
   </section>
 );
 
