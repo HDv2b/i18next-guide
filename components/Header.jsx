@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Head from 'next/head';
+import LanguagePicker from './LanguagePicker';
 
 const Header = ({ title }) => (
   <>
@@ -11,6 +12,7 @@ const Header = ({ title }) => (
       className="github"
       href="//github.com/isaachinman/next-i18next"
     />
+    <LanguagePicker />
   </>
 );
 

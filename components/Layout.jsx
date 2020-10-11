@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
-import LanguagePicker from './LanguagePicker';
 
 const Layout = ({ children }) => (
   <>
@@ -20,7 +19,6 @@ const Layout = ({ children }) => (
       <div className="container">
         <Sidebar />
         <div className="content">
-          <LanguagePicker />
           {children}
         </div>
       </div>

@@ -1,29 +1,20 @@
 import PropTypes from 'prop-types';
-import { i18n, Link, withTranslation } from '../i18n';
+import { withTranslation } from '../i18n';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 const Homepage = ({ t }) => (
   <main>
-    <Header title="" />
-    <div>
-      <Link href="/second-page">
-        <button
-          type="button"
-        >
-          {t('to-second-page')}
-        </button>
-      </Link>
-    </div>
+    <Header title="Basic Example" />
+    <p>{t('greeting')}</p>
   </main>
 );
 
 Homepage.getInitialProps = async () => ({
-  namespacesRequired: ['common', 'footer'],
+  namespacesRequired: ['common', 'footer', 'basic'],
 });
 
 Homepage.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default withTranslation('common')(Homepage);
+export default withTranslation('basic')(Homepage);
