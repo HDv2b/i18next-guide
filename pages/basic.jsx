@@ -4,27 +4,18 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const Homepage = ({ t }) => (
-    <>
-        <main>
-            <Header title={t('h1')} />
-            <div>
+    <main>
+        <Header title="" />
+        <div>
+            <Link href='/second-page'>
                 <button
                     type='button'
-                    onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'de' : 'en')}
                 >
-                    {t('change-locale')}
+                    {t('to-second-page')}
                 </button>
-                <Link href='/second-page'>
-                    <button
-                        type='button'
-                    >
-                        {t('to-second-page')}
-                    </button>
-                </Link>
-            </div>
-        </main>
-        <Footer />
-    </>
+            </Link>
+        </div>
+    </main>
 )
 
 Homepage.getInitialProps = async () => ({
