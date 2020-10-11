@@ -21,7 +21,7 @@ const ExternalLinks = () => (
     <ul>
       {
                 links.map((link) => (
-                  <li>
+                  <li key={link.label}>
                     <a href={link.pageName}>
                       {link.icon}
                       {link.label}

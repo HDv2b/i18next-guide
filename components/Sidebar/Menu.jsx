@@ -19,7 +19,7 @@ const Menu = () => (
   <div>
     <ul>
       {
-                links.map((link) => <li><Link href={link.pageName}>{link.label}</Link></li>)
+                links.map((link) => <li key={link.pageName}><Link href={link.pageName}>{link.label}</Link></li>)
             }
     </ul>
   </div>
