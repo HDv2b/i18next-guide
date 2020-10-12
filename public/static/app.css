@@ -31,3 +31,10 @@ header h1 {
 .language-picker {
     padding-bottom: 10px;
 }
+
+.preview {
+    border: #444 dashed 2px;
+    border-radius: 10px;
+    background: #f6f6f6;
+    padding: 20px;
+}
