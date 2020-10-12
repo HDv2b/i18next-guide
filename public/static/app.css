@@ -38,3 +38,17 @@ header h1 {
     background: #f6f6f6;
     padding: 20px;
 }
+
+.preview dl {
+    margin-bottom: 20px;
+}
+
+.preview dt {
+    width: 20%;
+    float: left;
+}
+
+.preview dd {
+    width: 80%;
+    float: left;
+}
