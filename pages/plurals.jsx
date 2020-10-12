@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { i18n, Link, withTranslation } from '../i18n';
+import { withTranslation } from '../i18n';
 import Header from '../components/Header';
 
 const Homepage = ({ t }) => {
@@ -8,26 +8,24 @@ const Homepage = ({ t }) => {
 
   return (
     <main>
-      <Header title={t('h1')} />
+      <Header title="Plurals example" />
       <div>
-
-        <div>
-          <input type="number" onChange={(e) => setNumber(parseInt(e.target.value, 10))} defaultValue={number} />
-          <p>{t('plurals:keyWithCount', { count: number })}</p>
+        <div className="preview">
+          <div>
+            <p>
+              Change the counter below and watch the sentence update to use the appropriate&nbsp;
+              <a href="https://en.wikipedia.org/wiki/Grammatical_number">grammatical number</a>
+              .
+            </p>
+            <input type="number" onChange={(e) => setNumber(parseInt(e.target.value, 10))} defaultValue={number} />
+            <p>{t('plurals:keyWithCount', { count: number })}</p>
+          </div>
         </div>
 
         <p>
           see:
           <a href="https://jsfiddle.net/sm9wgLze">https://jsfiddle.net/sm9wgLze</a>
         </p>
-
-        <Link href="/second-page">
-          <button
-            type="button"
-          >
-            {t('to-second-page')}
-          </button>
-        </Link>
       </div>
     </main>
   );

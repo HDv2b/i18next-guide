@@ -1,0 +1,8 @@
+{
+  "key_0": "вещь",
+  "key_1": "вещи",
+  "key_2": "вещей",
+  "keyWithCount_0": "{{count}} вещь",
+  "keyWithCount_1": "{{count}} вещи",
+  "keyWithCount_2": "{{count}} вещей"
+}

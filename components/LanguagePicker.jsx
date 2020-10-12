@@ -6,6 +6,7 @@ const LanguagePicker = () => (
     <select onChange={(e) => i18n.changeLanguage(e.target.value)} defaultValue={i18n.language}>
       <option value="en">English (en)</option>
       <option value="de">Deutsch (de)</option>
+      <option value="ru">Русский (ru)</option>
     </select>
   </section>
 );
