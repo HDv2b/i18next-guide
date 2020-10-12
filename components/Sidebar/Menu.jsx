@@ -13,6 +13,10 @@ const links = [
     label: 'Plurals',
     pageName: 'plurals',
   },
+  {
+    label: 'Interpolation',
+    pageName: 'interpolation',
+  },
 ];
 
 const Menu = () => (
