@@ -8,18 +8,18 @@ const Homepage = ({ t }) => {
 
   return (
     <main>
-      <Header title="Basic Example" />
+      <Header title="Interpolation Example" />
       <div className="preview">
         <label htmlFor="name">Name: </label>
         <input
-          name="name"
+          id="name"
           onChange={(e) => setField({ ...fields, name: e.target.value })}
           defaultValue={fields.name}
         />
         <br />
         <label htmlFor="location">Location: </label>
         <input
-          name="location"
+          id="location"
           onChange={(e) => setField({ ...fields, location: e.target.value })}
           defaultValue={fields.location}
         />
