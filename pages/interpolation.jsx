@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { i18n, withTranslation } from '../i18n';
 import Header from '../components/Header';
-import InterpolationExample from '../components/Examples/Interpolation';
+import InterpolationExample from '../public/static/exampleComponents/Interpolation';
 
 const Interpolation = ({ exampleSrc, i18nFiles }) => (
   <main>
@@ -51,7 +51,7 @@ export async function getServerSideProps() {
   const fs = require('fs');
   const path = require('path');
 
-  const exampleSrc = fs.readFileSync(path.resolve('./components/Examples', 'Interpolation.jsx'), 'utf8');
+  const exampleSrc = fs.readFileSync(path.resolve('./public/static/exampleComponents', 'Interpolation.jsx'), 'utf8');
 
   const i18nFiles = {
     en: fs.readFileSync(path.resolve('./public/static/locales/en', 'interpolation.json'), 'utf8'),

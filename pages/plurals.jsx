@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { i18n, withTranslation } from '../i18n';
 import Header from '../components/Header';
-import PluralsExample from '../components/Examples/Plurals';
+import PluralsExample from '../public/static/exampleComponents/Plurals';
 
 const Plurals = ({ exampleSrc, i18nFiles }) => (
   <main>
@@ -62,7 +62,7 @@ export async function getServerSideProps() {
   const fs = require('fs');
   const path = require('path');
 
-  const exampleSrc = fs.readFileSync(path.resolve('./components/Examples', 'Plurals.jsx'), 'utf8');
+  const exampleSrc = fs.readFileSync(path.resolve('./public/static/exampleComponents', 'Plurals.jsx'), 'utf8');
 
   const i18nFiles = {
     en: fs.readFileSync(path.resolve('./public/static/locales/en', 'plurals.json'), 'utf8'),

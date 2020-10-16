@@ -2,7 +2,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import PropTypes from 'prop-types';
 import { i18n, withTranslation } from '../i18n';
 import Header from '../components/Header';
-import BasicExample from '../components/Examples/Basic';
+import BasicExample from '../public/static/exampleComponents/Basic';
 
 const Basic = ({ exampleSrc, i18nFiles }) => (
   <main>
@@ -45,7 +45,7 @@ export async function getServerSideProps() {
   const fs = require('fs');
   const path = require('path');
 
-  const exampleSrc = fs.readFileSync(path.resolve('./components/Examples', 'Basic.jsx'), 'utf8');
+  const exampleSrc = fs.readFileSync(path.resolve('./public/static/exampleComponents', 'Basic.jsx'), 'utf8');
 
   const i18nFiles = {
     en: fs.readFileSync(path.resolve('./public/static/locales/en', 'basic.json'), 'utf8'),

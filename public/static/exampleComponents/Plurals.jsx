@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { withTranslation } from '../../i18n';
+import { withTranslation } from '../../../i18n';
 import PropTypes from 'prop-types';
 
 const PluralsExample = ({ t }) => {

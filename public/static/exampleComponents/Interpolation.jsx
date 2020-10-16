@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { withTranslation } from '../../i18n';
+import { withTranslation } from '../../../i18n';
 
 const InterpolationExample = ({ t }) => {
   const [fields, setField] = useState({ name: 'Michael', location: 'London' });
