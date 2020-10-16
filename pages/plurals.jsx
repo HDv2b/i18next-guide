@@ -45,12 +45,13 @@ const Plurals = ({ exampleSrc, i18nFiles }) => (
         </div>
       </section>
       <section className="tips">
-        <h2>Tips</h2>
+        <h2>Why?</h2>
         <ul>
           <li>Remember that even in English, it's not helpful to just stick an "s" at the end of every word to make it plural. For example "sheep" and "hooves" and "wellies".</li>
           <li>In some languages, the adjective is also pluralized.</li>
-          <li>In English we only have singular and plural, but other languages have different "<a href="https://en.wikipedia.org/wiki/Grammatical_number">grammatical numbers</a>". For example some language feature "Dual", where the word is spelt differently than either its singular or plural form. This is just one example of different grammatical numbers out there. For another example, switch to Russian (ru), and notice the spelling change between 0, 1, 2, and 5 items.</li>
-          <li>For a guide for how to support individual languages' grammatical numbers, see <a href="https://jsfiddle.net/sm9wgLze">https://jsfiddle.net/sm9wgLze</a>.</li>
+          <li>In English we only have singular and plural, which may sound trivial, but other languages have different "<a href="https://en.wikipedia.org/wiki/Grammatical_number">grammatical numbers</a>". For example, switch to Russian (ru), and notice the noun's suffix change between 0, 1, 2, and 5 items.</li>
+          <li>It should be noted that the <code>_0</code>, <code>_1</code>, and <code>_2</code> suffixes in the Russian example relate to the group, and not the number of items being counted. For example, <code>_1</code> in Russian applies to quantities of 2 to 4, 22 to 24, 32 to 34, and so on...</li>
+          <li>Remember that quantities might not be grouped the same across different languages. For a guide for how to support individual languages' grammatical numbers, see <a href="https://jsfiddle.net/sm9wgLze">https://jsfiddle.net/sm9wgLze</a>.</li>
         </ul>
       </section>
     </div>
