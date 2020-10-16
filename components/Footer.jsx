@@ -5,9 +5,6 @@ import { withTranslation } from '../i18n';
 const Footer = ({ t }) => (
   <footer>
     <p>
-      {t('description')}
-    </p>
-    <p>
       next-i18next v
       {version}
     </p>

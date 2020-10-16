@@ -39,7 +39,7 @@ const Interpolation = ({ exampleSrc, i18nFiles }) => (
       </div>
     </section>
     <section className="tips">
-      <h2>Tips</h2>
+      <h2>Why?</h2>
       <ul>
         <li>In the case of dynamic text, it's not enough to simply translate and swap word for word, because different languages will order their words differently. For example, switch to German and watch the verb take the end of the sentence instead of the city name.</li>
       </ul>
