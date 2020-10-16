@@ -50,8 +50,10 @@ const Interpolation = ({ exampleSrc, i18nFiles }) => (
 export async function getServerSideProps() {
   const fs = require('fs');
   const path = require('path');
+  const getConfig = require('next/config');
+  const { serverRuntimeConfig } = getConfig();
 
-  const exampleSrc = fs.readFileSync(path.resolve(__dirname, '../public/static/exampleComponents/Interpolation.jsx'), 'utf8');
+  const exampleSrc = fs.readFileSync(path.join(serverRuntimeConfig.PROJECT_ROOT, './public/static/exampleComponents/Interpolation.jsx'), 'utf8');
 
   const i18nFiles = {
     en: fs.readFileSync(path.resolve('./public/static/locales/en', 'interpolation.json'), 'utf8'),
