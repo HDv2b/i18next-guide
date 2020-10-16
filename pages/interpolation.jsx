@@ -1,35 +1,49 @@
 import PropTypes from 'prop-types';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { withTranslation } from '../i18n';
+import { i18n, withTranslation } from '../i18n';
 import Header from '../components/Header';
 import InterpolationExample from '../components/Examples/Interpolation';
 
 const Interpolation = ({ exampleSrc, i18nFiles }) => (
   <main>
     <Header title="Interpolation Example" />
-    <div className="preview">
+    <section className="preview">
       <InterpolationExample />
-    </div>
-    <div>
-      <SyntaxHighlighter language="jsx" showLineNumbers>
-        {exampleSrc}
-      </SyntaxHighlighter>
-      <SyntaxHighlighter language="json">
-        {i18nFiles.en}
-      </SyntaxHighlighter>
-      <SyntaxHighlighter language="json">
-        {i18nFiles.de}
-      </SyntaxHighlighter>
-      <SyntaxHighlighter language="json">
-        {i18nFiles.ru}
-      </SyntaxHighlighter>
-    </div>
-    <div>
+    </section>
+    <section>
+      <h2>Code</h2>
+      <div>
+        <SyntaxHighlighter language="jsx" showLineNumbers>
+          {exampleSrc}
+        </SyntaxHighlighter>
+      </div>
+      <div className="i18n-snippet-container" data-selected-lang={i18n.language}>
+        <div className="i18n-snippet" data-lang="en">
+          <p>interpolation/en.json</p>
+          <SyntaxHighlighter language="json">
+            {i18nFiles.en}
+          </SyntaxHighlighter>
+        </div>
+        <div className="i18n-snippet" data-lang="de">
+          <p>interpolation/de.json</p>
+          <SyntaxHighlighter language="json">
+            {i18nFiles.de}
+          </SyntaxHighlighter>
+        </div>
+        <div className="i18n-snippet" data-lang="ru">
+          <p>interpolation/ru.json</p>
+          <SyntaxHighlighter language="json">
+            {i18nFiles.ru}
+          </SyntaxHighlighter>
+        </div>
+      </div>
+    </section>
+    <section className="tips">
       <h2>Tips</h2>
       <ul>
         <li>In the case of dynamic text, it's not enough to simply translate and swap word for word, because different languages will order their words differently. For example, switch to German and watch the verb take the end of the sentence instead of the city name.</li>
       </ul>
-    </div>
+    </section>
   </main>
 );
 

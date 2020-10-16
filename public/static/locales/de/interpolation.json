@@ -1,5 +1,5 @@
 {
-  "name": "Name",
-  "location": "Wohnort",
+  "userName": "Name",
+  "userLocation": "Wohnort",
   "aboutPerson": "Mein Name ist {{name}} und ich wurde in {{location}} geboren."
 }

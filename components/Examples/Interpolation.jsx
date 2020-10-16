@@ -8,7 +8,7 @@ const InterpolationExample = ({ t }) => {
     <div>
       <dl>
         <dt>
-          <label htmlFor="name">{t('interpolation:name')}: </label>
+          <label htmlFor="name">{t('interpolation:userName')}: </label>
         </dt>
         <dd>
           <input
@@ -18,7 +18,7 @@ const InterpolationExample = ({ t }) => {
           />
         </dd>
         <dt>
-          <label htmlFor="location">{t('interpolation:location')}: </label>
+          <label htmlFor="location">{t('interpolation:userLocation')}: </label>
         </dt>
         <dd>
           <input
