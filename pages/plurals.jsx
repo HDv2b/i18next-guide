@@ -61,8 +61,10 @@ const Plurals = ({ exampleSrc, i18nFiles }) => (
 export async function getServerSideProps() {
   const fs = require('fs');
   const path = require('path');
+  const getConfig = require('next/config');
+  const { serverRuntimeConfig } = getConfig();
 
-  const exampleSrc = fs.readFileSync(path.resolve('./public/static/exampleComponents', 'Plurals.jsx'), 'utf8');
+  const exampleSrc = fs.readFileSync(path.join(serverRuntimeConfig.PROJECT_ROOT, './public/static/exampleComponents/Interpolation.jsx'), 'utf8');
 
   const i18nFiles = {
     en: fs.readFileSync(path.resolve('./public/static/locales/en', 'plurals.json'), 'utf8'),
