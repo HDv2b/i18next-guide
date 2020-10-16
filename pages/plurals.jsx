@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import getConfig from 'next/config';
 import { i18n, withTranslation } from '../i18n';
 import Header from '../components/Header';
 import PluralsExample from '../public/static/exampleComponents/Plurals';
@@ -62,7 +61,6 @@ const Plurals = ({ exampleSrc, i18nFiles }) => (
 export async function getServerSideProps() {
   const fs = require('fs');
   const path = require('path');
-  const { serverRuntimeConfig } = getConfig();
 
   const exampleSrc = fs.readFileSync(path.resolve('./public/static/exampleComponents/Plurals.jsx'), 'utf8');
 
