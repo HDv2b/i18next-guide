@@ -64,7 +64,7 @@ export async function getServerSideProps() {
   const path = require('path');
   const { serverRuntimeConfig } = getConfig();
 
-  const exampleSrc = fs.readFileSync(path.resolve(serverRuntimeConfig.PROJECT_ROOT, './public/static/exampleComponents/Plurals.jsx'), 'utf8');
+  const exampleSrc = fs.readFileSync(path.resolve('./public/static/exampleComponents/Plurals.jsx'), 'utf8');
 
   const i18nFiles = {
     en: fs.readFileSync(path.resolve('./public/static/locales/en', 'plurals.json'), 'utf8'),
