@@ -1,24 +1,10 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { withTranslation } from '../i18n';
 import Header from '../components/Header';
+import PluralsExample from '../components/Examples/Plurals';
 
-const PluralsDemo = ({ t }) => {
-  const [number, setNumber] = useState(1);
-
-  return (
-    <div>
-      <input
-        type="number"
-        onChange={(e) => setNumber(parseInt(e.target.value, 10))}
-        defaultValue={number}
-      />
-      <p>{t('plurals:keyWithCount', { count: number })}</p>
-    </div>
-  );
-};
-
-const Homepage = ({ t }) => (
+const Plurals = ({ exampleSrc, i18nFiles }) => (
   <main>
     <Header title="Plurals example" />
     <div>
@@ -28,7 +14,21 @@ const Homepage = ({ t }) => (
           <a href="https://en.wikipedia.org/wiki/Grammatical_number">grammatical number</a>
           .
         </p>
-        <PluralsDemo t={t} />
+        <PluralsExample />
+      </div>
+      <div>
+        <SyntaxHighlighter language="jsx" showLineNumbers>
+          {exampleSrc}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="json">
+          {i18nFiles.en}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="json">
+          {i18nFiles.de}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="json">
+          {i18nFiles.ru}
+        </SyntaxHighlighter>
       </div>
       <div>
         <h2>Tips</h2>
@@ -43,12 +43,34 @@ const Homepage = ({ t }) => (
   </main>
 );
 
-Homepage.getInitialProps = async () => ({
-  namespacesRequired: ['common', 'footer', 'plurals'],
-});
+export async function getServerSideProps() {
+  const fs = require('fs');
+  const path = require('path');
 
-Homepage.propTypes = {
-  t: PropTypes.func.isRequired,
+  const exampleSrc = fs.readFileSync(path.resolve('./components/Examples', 'plurals.jsx'), 'utf8');
+
+  const i18nFiles = {
+    en: fs.readFileSync(path.resolve('./public/static/locales/en', 'plurals.json'), 'utf8'),
+    de: fs.readFileSync(path.resolve('./public/static/locales/de', 'plurals.json'), 'utf8'),
+    ru: fs.readFileSync(path.resolve('./public/static/locales/ru', 'plurals.json'), 'utf8'),
+  };
+
+  return {
+    props: {
+      namespacesRequired: ['common', 'footer', 'plurals'],
+      exampleSrc,
+      i18nFiles,
+    },
+  };
+}
+
+Plurals.propTypes = {
+  exampleSrc: PropTypes.string.isRequired,
+  i18nFiles: PropTypes.shape({
+    en: PropTypes.string.isRequired,
+    de: PropTypes.string.isRequired,
+    ru: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
-export default withTranslation('common')(Homepage);
+export default withTranslation('common')(Plurals);
