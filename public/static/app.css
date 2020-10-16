@@ -10,9 +10,21 @@ header {
     border-bottom: #333 solid 1px;
 }
 
+section {
+    border: #444 dashed 2px;
+    border-radius: 10px;
+    background: #f6f6f6;
+    padding: 20px;
+    margin: 10px 0;
+}
+
 header h1 {
     font-size: 40px;
     text-align: center;
+}
+
+h2 {
+    font-size: 22px;
 }
 
 .container {
@@ -32,13 +44,6 @@ header h1 {
     padding-bottom: 10px;
 }
 
-.preview {
-    border: #444 dashed 2px;
-    border-radius: 10px;
-    background: #f6f6f6;
-    padding: 20px;
-}
-
 .preview dl {
     margin-bottom: 20px;
 }
@@ -51,4 +56,26 @@ header h1 {
 .preview dd {
     width: 80%;
     float: left;
+}
+
+.i18n-snippet-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.i18n-snippet {
+    flex-grow: 1;
+    padding: 2px;
+}
+
+.tips ul {
+    list-style: disc outside;
+    margin-left: 15px;
+}
+
+.tips li {
+    margin: 5px;
+    line-height: 1.4em;
 }
