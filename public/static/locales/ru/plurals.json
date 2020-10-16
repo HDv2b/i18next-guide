@@ -1,8 +1,8 @@
 {
-  "key_0": "вещь",
-  "key_1": "вещи",
-  "key_2": "вещей",
-  "keyWithCount_0": "{{count}} вещь",
-  "keyWithCount_1": "{{count}} вещи",
-  "keyWithCount_2": "{{count}} вещей"
+  "ambiguous_0": "кое-какие вещь",
+  "ambiguous_1": "кое-какие вещи",
+  "ambiguous_2": "кое-какие вещей",
+  "withNumber_0": "{{count}} вещь",
+  "withNumber_1": "{{count}} вещи",
+  "withNumber_2": "{{count}} вещей"
 }

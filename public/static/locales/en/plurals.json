@@ -1,6 +1,6 @@
 {
-  "key": "item",
-  "key_plural": "items",
-  "keyWithCount": "{{count}} item",
-  "keyWithCount_plural": "{{count}} items"
+  "ambiguous": "An item",
+  "ambiguous_plural": "Some items",
+  "withNumber": "{{count}} item",
+  "withNumber_plural": "{{count}} items"
 }

@@ -1,6 +1,6 @@
 {
-  "key": "Ding",
-  "key_plural": "Dinge",
-  "keyWithCount": "{{count}} Ding",
-  "keyWithCount_plural": "{{count}} Dinge"
+  "ambiguous": "Ein Ding",
+  "ambiguous_plural": "Einige Dinge",
+  "withNumber": "{{count}} Ding",
+  "withNumber_plural": "{{count}} Dinge"
 }
