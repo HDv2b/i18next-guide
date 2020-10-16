@@ -4,7 +4,7 @@ import Header from '../components/Header';
 
 const Homepage = ({ t }) => (
   <main>
-    <Header title={t('h1')} />
+    <Header title="Welcome!" />
     <p>Hello World</p>
   </main>
 );
