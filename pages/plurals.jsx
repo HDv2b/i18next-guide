@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { withTranslation } from '../i18n';
 import Header from '../components/Header';
 import PluralsExample from '../components/Examples/Plurals';
 
-const Plurals = ({ t, exampleSrc, i18nFiles }) => (
+const Plurals = ({ exampleSrc, i18nFiles }) => (
   <main>
     <Header title="Plurals example" />
     <div>
@@ -13,29 +14,21 @@ const Plurals = ({ t, exampleSrc, i18nFiles }) => (
           <a href="https://en.wikipedia.org/wiki/Grammatical_number">grammatical number</a>
           .
         </p>
-        <PluralsExample t={t} />
+        <PluralsExample />
       </div>
       <div>
-        <code>
-          <pre>
-            {exampleSrc}
-          </pre>
-        </code>
-        <code>
-          <pre>
-            {i18nFiles.en}
-          </pre>
-        </code>
-        <code>
-          <pre>
-            {i18nFiles.de}
-          </pre>
-        </code>
-        <code>
-          <pre>
-            {i18nFiles.ru}
-          </pre>
-        </code>
+        <SyntaxHighlighter language="jsx" showLineNumbers>
+          {exampleSrc}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="json">
+          {i18nFiles.en}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="json">
+          {i18nFiles.de}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="json">
+          {i18nFiles.ru}
+        </SyntaxHighlighter>
       </div>
       <div>
         <h2>Tips</h2>
@@ -50,7 +43,7 @@ const Plurals = ({ t, exampleSrc, i18nFiles }) => (
   </main>
 );
 
-export async function getServerSideProps(ctx) {
+export async function getServerSideProps() {
   const fs = require('fs');
   const path = require('path');
 
@@ -72,7 +65,12 @@ export async function getServerSideProps(ctx) {
 }
 
 Plurals.propTypes = {
-  t: PropTypes.func.isRequired,
+  exampleSrc: PropTypes.string.isRequired,
+  i18nFiles: PropTypes.shape({
+    en: PropTypes.string.isRequired,
+    de: PropTypes.string.isRequired,
+    ru: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default withTranslation('common')(Plurals);
