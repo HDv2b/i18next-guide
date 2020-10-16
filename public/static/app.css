@@ -79,3 +79,21 @@ h2 {
     margin: 5px;
     line-height: 1.4em;
 }
+
+[data-selected-lang="en"] [data-lang="en"] {
+    outline: 1px solid green;
+}
+
+[data-selected-lang="de"] [data-lang="de"] {
+    outline: 1px solid green;
+}
+
+[data-selected-lang="ru"] [data-lang="ru"] {
+    outline: 1px solid green;
+}
+
+code {
+    color: #d00;
+    background-color: #ddd;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
