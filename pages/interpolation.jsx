@@ -1,10 +1,13 @@
-import PropTypes from 'prop-types';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { i18n, withTranslation } from '../i18n';
 import Header from '../components/Header';
 import InterpolationExample from '../components/Examples/Interpolation';
+import InterpolationExampleSrc from '!!raw-loader!../components/Examples/Plurals';
+import InterpolationI18nEnSrc from '!!json-raw-loader!../public/static/locales/en/interpolation.json';
+import InterpolationI18nDeSrc from '!!json-raw-loader!../public/static/locales/de/interpolation.json';
+import InterpolationI18nRuSrc from '!!json-raw-loader!../public/static/locales/ru/interpolation.json';
 
-const Interpolation = ({ exampleSrc, i18nFiles }) => (
+const Interpolation = () => (
   <main>
     <Header title="Interpolation Example" />
     <section className="preview">
@@ -14,26 +17,26 @@ const Interpolation = ({ exampleSrc, i18nFiles }) => (
       <h2>Code</h2>
       <div>
         <SyntaxHighlighter language="jsx" showLineNumbers>
-          {exampleSrc}
+          {InterpolationExampleSrc}
         </SyntaxHighlighter>
       </div>
       <div className="i18n-snippet-container" data-selected-lang={i18n.language}>
         <div className="i18n-snippet" data-lang="en">
           <p>interpolation/en.json</p>
           <SyntaxHighlighter language="json">
-            {i18nFiles.en}
+            {InterpolationI18nEnSrc}
           </SyntaxHighlighter>
         </div>
         <div className="i18n-snippet" data-lang="de">
           <p>interpolation/de.json</p>
           <SyntaxHighlighter language="json">
-            {i18nFiles.de}
+            {InterpolationI18nDeSrc}
           </SyntaxHighlighter>
         </div>
         <div className="i18n-snippet" data-lang="ru">
           <p>interpolation/ru.json</p>
           <SyntaxHighlighter language="json">
-            {i18nFiles.ru}
+            {InterpolationI18nRuSrc}
           </SyntaxHighlighter>
         </div>
       </div>
@@ -48,33 +51,11 @@ const Interpolation = ({ exampleSrc, i18nFiles }) => (
 );
 
 export async function getServerSideProps() {
-  const fs = require('fs');
-  const path = require('path');
-
-  const exampleSrc = fs.readFileSync(path.resolve('./components/Examples', 'Interpolation.jsx'), 'utf8');
-
-  const i18nFiles = {
-    en: fs.readFileSync(path.resolve('./public/static/locales/en', 'interpolation.json'), 'utf8'),
-    de: fs.readFileSync(path.resolve('./public/static/locales/de', 'interpolation.json'), 'utf8'),
-    ru: fs.readFileSync(path.resolve('./public/static/locales/ru', 'interpolation.json'), 'utf8'),
-  };
-
   return {
     props: {
       namespacesRequired: ['common', 'footer', 'interpolation'],
-      exampleSrc,
-      i18nFiles,
     },
   };
 }
-
-Interpolation.propTypes = {
-  exampleSrc: PropTypes.string.isRequired,
-  i18nFiles: PropTypes.shape({
-    en: PropTypes.string.isRequired,
-    de: PropTypes.string.isRequired,
-    ru: PropTypes.string.isRequired,
-  }).isRequired,
-};
 
 export default withTranslation('basic')(Interpolation);
