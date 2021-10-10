@@ -27,6 +27,11 @@ h2 {
     font-size: 22px;
 }
 
+p {
+    line-height: 1.3em;
+    padding: 0.6em 0px;
+}
+
 .container {
     display: flex;
 }
