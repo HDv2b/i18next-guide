@@ -2,7 +2,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { i18n, withTranslation } from '../i18n';
 import Header from '../components/Header';
 import InterpolationExample from '../components/Examples/Interpolation';
-import InterpolationExampleSrc from '!!raw-loader!../components/Examples/Plurals';
+import InterpolationExampleSrc from '!!raw-loader!../components/Examples/Interpolation';
 import InterpolationI18nEnSrc from '!!json-raw-loader!../public/static/locales/en/interpolation.json';
 import InterpolationI18nDeSrc from '!!json-raw-loader!../public/static/locales/de/interpolation.json';
 import InterpolationI18nRuSrc from '!!json-raw-loader!../public/static/locales/ru/interpolation.json';
